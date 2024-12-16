@@ -24,6 +24,9 @@ spec:
       storage: "1Gi"
     config: {}
   tikv:
+    env:
+      - name: GRPC_DNS_RESOLVER
+        value: native
     baseImage: pingcap/tikv
     maxFailoverCount: 0
     # If only 1 TiKV is deployed, the TiKV region leader
